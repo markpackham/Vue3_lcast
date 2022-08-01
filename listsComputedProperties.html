@@ -13,20 +13,38 @@
 <body class="h-full grid place-items-center">
     <div id="app">
         <section>
-            <h2>Assignments</h2>
+            <h2 class="font-bold mb-2">Assignments</h2>
 
             <ul>
-                <li>Finish project</li>
-                <li>Read chapter 4</li>
-                <li>Say cat ate my homework</li>
+                <li v-for="assignment in assignments">
+                    {{assignment.name}}
+                </li>
             </ul>
         </section>
     </div>
 
     <script>
-        Vue.createApp({
+        let app = {
+            data() {
+                return {
+                    assignments: [{
+                            name: 'Finish project',
+                            complete: false
+                        },
+                        {
+                            name: 'Read chapter 4',
+                            complete: false
+                        },
+                        {
+                            name: 'Say cat ate my homework',
+                            complete: false
+                        },
+                    ]
+                }
+            }
+        };
 
-        }).mount('#app');
+        Vue.createApp(app).mount('#app');
     </script>
 </body>
 </html>
