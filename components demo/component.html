@@ -12,20 +12,12 @@
 
     <div id="app">
         <app-button>Submit</app-button>
-        <app-button>Click Me</app-button>
     </div>
 
     <script type="module">
-        import AppButton from './components/AppButton.js';
+        import App from './components/App.js';
 
-        let app = {
-            components: {
-                'app-button': AppButton
-
-            }
-        };
-
-        Vue.createApp(app).mount('#app');
+        Vue.createApp(App).mount('#app');
     </script>
 </body>
 </html>
