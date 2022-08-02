@@ -6,6 +6,7 @@ export default {
      'bg-gray-200 hover:bg-gray-400': type === 'muted',
      'bg-blue-200 hover:bg-blue-400': type === 'primary',
      'bg-green-200 hover:bg-green-400': type === 'secondary',
+     'is-loading': processing
     }" 
     :disabled="processing">
         <slot />
@@ -17,11 +18,10 @@ export default {
       type: String,
       default: "primary",
     },
-  },
 
-  data() {
-    return {
-      processing: false,
-    };
+    processing: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
