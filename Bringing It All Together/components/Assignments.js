@@ -6,6 +6,14 @@ export default {
   <section class="space-y-6">
     <AssignmentList :assignments="filters.inProgressAssignments" title="In Progress"></AssignmentList>
     <AssignmentList :assignments="filters.completedAssignments" title="Completed"></AssignmentList>
+
+    <form @submit="add">
+    <div class="p-2 bg-slate-600">
+    <input placeholder="New assignment..." />
+    </div>
+    <button class="p-2 bg-slate-400" type="submit">Add</button>
+    </form>
+
     </section>
     `,
 
@@ -38,6 +46,12 @@ export default {
           (assignments) => assignments.complete
         ),
       };
+    },
+  },
+
+  methods: {
+    add() {
+      alert("Hello");
     },
   },
 };
