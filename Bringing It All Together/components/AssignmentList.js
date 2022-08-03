@@ -1,16 +1,17 @@
+import Assignment from "./Assignment.js";
+
 export default {
+  components: { Assignment },
+
   template: `
 
   <section v-show="assignments.length" class="mt-8">
     <h2 class="font-bold mb-2">{{title}}</h2>
   
     <ul>
-        <li v-for="assignment in assignments" :key="assignment.name">
-            <label>{{assignment.name}}
-                <input type="checkbox" v-model="assignment.complete">
-            </label>
-        </li>
+    <Assignment v-for="assignment in assignments" :assignment="assignment" :key="assignment.name"></Assignment>
     </ul>
+
   </section>
     `,
 
