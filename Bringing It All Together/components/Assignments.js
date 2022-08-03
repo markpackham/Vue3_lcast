@@ -4,6 +4,7 @@ export default {
   components: { AssignmentList },
   template: `
     <AssignmentList :assignments="inProgressAssignments" title="In Progress"></AssignmentList>
+    <AssignmentList :assignments="completedAssignments" title="Completed"></AssignmentList>
     `,
 
   data() {
