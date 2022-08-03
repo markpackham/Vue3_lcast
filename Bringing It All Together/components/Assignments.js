@@ -7,7 +7,7 @@ export default {
     <AssignmentList :assignments="filters.inProgressAssignments" title="In Progress"></AssignmentList>
     <AssignmentList :assignments="filters.completedAssignments" title="Completed"></AssignmentList>
 
-    <form @submit="add">
+    <form @submit.prevent="add">
     <div class="p-2 bg-slate-600">
     <input placeholder="New assignment..." />
     </div>
@@ -50,8 +50,6 @@ export default {
   },
 
   methods: {
-    add() {
-      alert("Hello");
-    },
+    add() {},
   },
 };
