@@ -6,16 +6,21 @@ export default {
   template: `
 
   <section v-show="assignments.length" class="mt-8">
-    <h2 class="font-bold mb-2">
+    <h2 class="text-xl font-bold mb-2">
     {{title}}
     <span>({{assignments.length}})</span>
     </h2>
 
+    <h5 class="font-bold mb-2">Tags</h5>
     <div class="flex gap-2">
     <button 
     @click="currrentTag = tag"
     v-for="tag in tags" 
-    class="bg-slate-800 text-white rounded px-2 py-2">
+    class="bg-slate-800 text-white rounded px-2 py-2"
+    :class="{
+      'text-blue-500': tag === currrentTag
+    }"
+    >
     {{tag}}
     </button>
     </div>
@@ -34,17 +39,21 @@ export default {
 
   data() {
     return {
-      currrentTag: "",
+      currrentTag: "all",
     };
   },
 
   computed: {
     filteredAssignments() {
+      if (this.currrentTag === "all") {
+        return this.assignments;
+      }
+
       return this.assignments.filter((a) => a.tag === this.currrentTag);
     },
 
     tags() {
-      return new Set(this.assignments.map((a) => a.tag));
+      return ["all", ...new Set(this.assignments.map((a) => a.tag))];
     },
   },
 };
