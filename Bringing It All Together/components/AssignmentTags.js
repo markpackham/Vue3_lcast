@@ -22,7 +22,7 @@ export default {
 
   computed: {
     tags() {
-      return ["all", ...new Set(this.initialTags.map((a) => a.tag))];
+      return ["all", ...new Set(this.initialTags)];
     },
   },
 };
