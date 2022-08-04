@@ -14,6 +14,17 @@ export default {
     };
   },
   methods: {
-    add() {},
+    add() {
+      //   if (this.newAssignment.length > 0) {
+      //     this.assignments.push({
+      //       name: this.newAssignment,
+      //       complete: false,
+      //     });
+      //   }
+
+      this.$emit("add", this.newAssignment);
+
+      this.newAssignment = "";
+    },
   },
 };

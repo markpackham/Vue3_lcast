@@ -8,7 +8,7 @@ export default {
     <AssignmentList :assignments="filters.inProgressAssignments" title="In Progress"></AssignmentList>
     <AssignmentList :assignments="filters.completedAssignments" title="Completed"></AssignmentList>
 
-    <AssignmentCreate></AssignmentCreate>
+    <AssignmentCreate @add="add"></AssignmentCreate>
 
     </section>
     `,
@@ -46,13 +46,12 @@ export default {
   },
 
   methods: {
-    add() {
-      if (this.newAssignment.length > 0) {
-        this.assignments.push({
-          name: this.newAssignment,
-          complete: false,
-        });
-      }
+    add(name) {
+      this.assignments.push({
+        name: name,
+        complete: false,
+      });
+      this.newAssignment = "";
     },
   },
 };
