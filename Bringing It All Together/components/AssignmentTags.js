@@ -22,12 +22,6 @@ export default {
     currentTag: String,
   },
 
-  data() {
-    return {
-      currrentTag: "all",
-    };
-  },
-
   computed: {
     tags() {
       return ["all", ...new Set(this.initialTags)];

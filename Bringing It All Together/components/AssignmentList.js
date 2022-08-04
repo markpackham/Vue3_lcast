@@ -31,17 +31,17 @@ export default {
 
   data() {
     return {
-      currrentTag: "all",
+      currentTag: "all",
     };
   },
 
   computed: {
     filteredAssignments() {
-      if (this.currrentTag === "all") {
+      if (this.currentTag === "all") {
         return this.assignments;
       }
 
-      return this.assignments.filter((a) => a.tag === this.currrentTag);
+      return this.assignments.filter((a) => a.tag === this.currentTag);
     },
   },
 };
