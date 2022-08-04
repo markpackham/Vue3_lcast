@@ -19,14 +19,22 @@ export default {
         {
           name: "Finish project",
           complete: false,
+          tag: "latin",
         },
         {
           name: "Read chapter 4",
           complete: false,
+          tag: "latin",
+        },
+        {
+          name: "Drink petrol",
+          complete: false,
+          tag: "art",
         },
         {
           name: "Say cat ate my homework",
           complete: false,
+          tag: "history",
         },
       ],
     };
