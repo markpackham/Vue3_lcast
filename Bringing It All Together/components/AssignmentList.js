@@ -21,7 +21,7 @@ export default {
     </div>
   
     <ul>
-    <Assignment v-for="assignment in assignments" :assignment="assignment" :key="assignment.name"></Assignment>
+    <Assignment v-for="assignment in filteredAssignments" :assignment="assignment" :key="assignment.name"></Assignment>
     </ul>
 
   </section>
@@ -39,6 +39,10 @@ export default {
   },
 
   computed: {
+    filteredAssignments() {
+      return this.assignments.filter((a) => a.tag === this.currrentTag);
+    },
+
     tags() {
       return new Set(this.assignments.map((a) => a.tag));
     },
