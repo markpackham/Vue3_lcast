@@ -10,6 +10,10 @@ export default {
     {{title}}
     <span>({{assignments.length}})</span>
     </h2>
+
+    <div class="flex gap-2">
+    <button v-for="tag in tags" class="bg-slate-800 text-white rounded px-2 py-2">{{tag}}</button>
+    </div>
   
     <ul>
     <Assignment v-for="assignment in assignments" :assignment="assignment" :key="assignment.name"></Assignment>
@@ -21,5 +25,11 @@ export default {
   props: {
     assignments: Array,
     title: String,
+  },
+
+  computed: {
+    tags() {
+      return ["art", "history", "latin"];
+    },
   },
 };
