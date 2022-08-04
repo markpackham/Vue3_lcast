@@ -12,7 +12,12 @@ export default {
     </h2>
 
     <div class="flex gap-2">
-    <button v-for="tag in tags" class="bg-slate-800 text-white rounded px-2 py-2">{{tag}}</button>
+    <button 
+    @click="currrentTag = tag"
+    v-for="tag in tags" 
+    class="bg-slate-800 text-white rounded px-2 py-2">
+    {{tag}}
+    </button>
     </div>
   
     <ul>
@@ -25,6 +30,12 @@ export default {
   props: {
     assignments: Array,
     title: String,
+  },
+
+  data() {
+    return {
+      currrentTag: "",
+    };
   },
 
   computed: {
