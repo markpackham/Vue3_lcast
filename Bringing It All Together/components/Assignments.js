@@ -47,10 +47,12 @@ export default {
 
   methods: {
     add(name) {
-      this.assignments.push({
-        name: name,
-        complete: false,
-      });
+      if (name.length > 0) {
+        this.assignments.push({
+          name: name,
+          complete: false,
+        });
+      }
       this.newAssignment = "";
     },
   },
