@@ -10,6 +10,11 @@
             "tag": "latin"
         },
         {
+            "name": "Eat toast whilst painting",
+            "complete": false,
+            "tag": "art"
+        },
+        {
             "name": "Drink petrol",
             "complete": false,
             "tag": "art"

@@ -32,6 +32,14 @@ export default {
     },
   },
 
+  created() {
+    fetch("http://localhost:3001/assignments")
+      .then((response) => response.json())
+      .then((assignments) => {
+        this.assignments = assignments;
+      });
+  },
+
   methods: {
     add(name) {
       if (name.length > 0) {
