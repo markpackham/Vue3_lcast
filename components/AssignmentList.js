@@ -7,10 +7,15 @@ export default {
   template: `
 
   <section v-show="assignments.length" class="w-60">
+
+  <div class="flex justify-between items-start">
     <h2 class="text-xl font-bold mb-2">
     {{title}}
     <span>({{assignments.length}})</span>
     </h2>
+
+    <button>&times;</button>
+    </div>
 
     <assignment-tags
     v-model:currentTag="currentTag"
