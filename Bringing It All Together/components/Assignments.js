@@ -4,7 +4,7 @@ import AssignmentCreate from "./AssignmentCreate.js";
 export default {
   components: { AssignmentList, AssignmentCreate },
   template: `
-  <section class="space-y-6">
+  <section class="flex gap-8">
     <AssignmentList :assignments="filters.inProgressAssignments" title="In Progress"></AssignmentList>
     <AssignmentList :assignments="filters.completedAssignments" title="Completed"></AssignmentList>
 
