@@ -8,7 +8,7 @@ export default {
     <AssignmentList :assignments="filters.inProgressAssignments" title="In Progress">
     <AssignmentCreate @add="add"></AssignmentCreate>
     </AssignmentList>
-    <AssignmentList :assignments="filters.completedAssignments" title="Completed"></AssignmentList>
+    <AssignmentList :assignments="filters.completedAssignments" title="Completed" canToggle></AssignmentList>
 
     </section>
     `,
