@@ -8,7 +8,20 @@ export default {
   <div class="grid gap-6">
     <Assignments></Assignments>
 
-    <Panel heading="Hello World" />
+    <Panel>
+      This is just some text with no h2 slot
+    </Panel>
+
+    <Panel>
+      <template v-slot:heading>
+        This is my Heading slot content.
+      </template>
+
+      <template v-slot:default>
+        This is my default content.
+      </template>
+
+    </Panel>
   </div>
   `,
 };
