@@ -1,6 +1,11 @@
 export default {
   template: `
-  <div class="w-60 bg-gray-700 p-4 border border-gray-600 rounded-lg">
+  <div :class="{
+    'w-60 p-4 border rounded-lg' : true,
+    'bg-white  border-gray-300' : theme == 'light'
+    'bg-gray-700  border-gray-600' : theme == 'dark',
+  }">
+
       <h2 v-if="$slots.heading" class="text-xl font-bold mb-2">
           <slot name="heading" />
       </h2>
@@ -15,5 +20,6 @@ export default {
 
   props: {
     heading: String,
+    theme: { type: String, default: "dark" },
   },
 };
