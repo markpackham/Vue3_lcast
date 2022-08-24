@@ -27,6 +27,10 @@ export default {
 
     <slot></slot>
 
+    <template #footer>
+      I am a footer slot
+    </template>
+
   </Panel>
     `,
 
