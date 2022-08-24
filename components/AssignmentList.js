@@ -8,22 +8,20 @@ export default {
 
   <section v-show="assignments.length" class="w-60 bg-gray-700 p-4 border border-gray-600 rounded-lg">
 
-  <div class="flex justify-between items-start">
-    <h2 class="text-xl font-bold mb-2">
-    {{title}}
-    <span>({{assignments.length}})</span>
-    </h2>
+    <div class="flex justify-between items-start">
+      <h2 class="text-xl font-bold mb-2">
+        {{title}}
+        <span>({{assignments.length}})</span>
+      </h2>
 
-    <button v-show="canToggle" @click="$emit('toggle')">&times;</button>
+      <button v-show="canToggle" @click="$emit('toggle')">&times;</button>
     </div>
 
-    <assignment-tags
-    v-model:currentTag="currentTag"
-    :initial-tags="assignments.map(a=>a.tag)"
-    ></assignment-tags>
-  
+    <assignment-tags v-model:currentTag="currentTag" :initial-tags="assignments.map(a=>a.tag)"></assignment-tags>
+
     <ul>
-    <Assignment v-for="assignment in filteredAssignments" :assignment="assignment" :key="assignment.name"></Assignment>
+      <Assignment v-for="assignment in filteredAssignments" :assignment="assignment" :key="assignment.name">
+      </Assignment>
     </ul>
 
     <slot></slot>

@@ -1,10 +1,10 @@
 export default {
   template: `
   <li>
-  <label>{{assignment.name}}
+    <label>{{assignment.name}}
       <input type="checkbox" v-model="assignment.complete">
-  </label>
-</li>
+    </label>
+  </li>
     `,
 
   props: {
