@@ -22,6 +22,21 @@ export default {
       </template>
 
     </Panel>
+
+    <Panel>
+    <template v-slot:heading>
+      This is my Heading slot content.
+    </template>
+
+    <template v-slot:default>
+      This is my default content.
+    </template>
+
+    <template v-slot:footer>
+    Hi I am a footer slot.
+  </template>
+
+  </Panel>
   </div>
   `,
 };

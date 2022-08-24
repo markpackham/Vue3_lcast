@@ -6,6 +6,10 @@ export default {
       </h2>
 
       <slot />
+
+      <footer v-if="$slots.footer" class="border-gray-600 border-t mt-4 pt-4 text-sm">
+      <slot name="footer"></slot>
+      </footer>
   </div>
     `,
 
